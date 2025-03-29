@@ -1,0 +1,370 @@
+/* Reset y estructura básica */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffe6f2;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background-color: #d63384;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 32px;
+  font-family: 'Abril Fatface', cursive;
+  position: relative;
+}
+
+/* Container principal */
+.container {
+  text-align: center;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.gif-container img {
+  width: 550px;
+  margin-top: 20px;
+}
+
+/* Contenedor de los botones */
+.buttons {
+  text-align: center;
+  margin-top: 30px; /* Aumenta este valor para bajar más los botones */
+}
+
+/* Botones */
+.buttons a {
+  text-decoration: none;
+  background-color: #d63384;
+  color: white;
+  padding: 10px 30px;
+  margin: 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* Botón de regresar */
+.boton-regresar {
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 20px;
+}
+
+.boton-regresar a {
+    text-decoration: none;
+    background-color: #d63384;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.boton-regresar a:hover {
+    background-color: #a52868;
+}
+
+/* Estilos de la cuadrícula */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Columnas del mismo tamaño */
+  gap: 10px;
+  padding: 20px;
+  justify-content: center;
+}
+
+/* Tamaño uniforme para imágenes y videos */
+.grid img, .grid video {
+  width: 100%;
+  height: 200px; /* Altura fija para todos los elementos */
+  object-fit: cover; /* Recorta la imagen/video sin deformarlo */
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Modal para mostrar la imagen o video en grande */
+#modal-galeria {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal-galeria .modal-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+#cerrar-modal-galeria {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Footer fijo al final */
+footer {
+  background-color: #d63384;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-family: 'Abril Fatface', cursive;
+  margin-top: auto;
+}
+
+/* Estilo para la parte izquierda y derecha del footer */
+.footer-left {
+  text-align: left;
+}
+.footer-right {
+  text-align: right;
+}
+
+/* Estilo del botón de calendario */
+#calendar-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Modal del Calendario */
+.modal {
+  display: none; /* Se muestra al activar */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+}
+
+/* Botón de cerrar el modal */
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Estilos para el calendario */
+#calendar-container {
+  text-align: center;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-header button {
+  background-color: #d63384;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.calendar-header span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar-grid div {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.calendar-grid .header {
+  background-color: #d63384;
+  color: white;
+  font-weight: bold;
+}
+
+.calendar-grid .highlight {
+  background-color: #ffb6c1;
+  font-weight: bold;
+}
+
+/* Estilo de los corazones */
+.rain-heart {
+  position: absolute;
+  color: pink;
+  font-size: 20px;
+  pointer-events: none;
+  animation: fall 4s linear infinite;
+}
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor del contenido dentro del modal */
+.modal-contenido {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 500px; /* Ajusta el tamaño del modal */
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tamaño para imágenes y videos dentro del modal */
+.contenido-modal {
+    max-width: 100%;
+    max-height: 500px;
+    border-radius: 10px;
+}
+
+/* Botón para cerrar el modal */
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  header {
+    font-size: 24px;
+    padding: 10px;
+  }
+
+  .container p {
+    font-size: 16px;
+  }
+
+  .gif-container img {
+    width: 90%;
+  }
+
+  .buttons a {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .grid img, .grid video {
+    height: 150px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left, .footer-right {
+    margin-bottom: 10px;
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas (móviles en vertical) */
+@media (max-width: 480px) {
+  header {
+    font-size: 20px;
+  }
+
+  .buttons a {
+    font-size: 12px;
+    padding: 6px 15px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .grid img, .grid video {
+    height: 120px;
+  }
+}
+
+@keyframes fall {
+  0% { transform: translateY(0px); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}

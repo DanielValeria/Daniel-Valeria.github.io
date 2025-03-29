@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GALERÍA - RECUERDOS D&V</title>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    RECUERDOS D&V
+    <h2>GALERÍA</h2>
+  </header>
+
+  <div class="grid">
+    <!-- Lista manual de imágenes y videos -->
+    <img src="foto1.jpg" alt="Recuerdo 1">
+    <img src="foto2.jpg" alt="Recuerdo 2">
+    <img src="foto3.jpg" alt="Recuerdo 3">
+    <img src="foto4.jpg" alt="Recuerdo 4">
+    <img src="foto5.jpg" alt="Recuerdo 5">
+    <img src="foto6.jpg" alt="Recuerdo 6">
+    <img src="foto7.jpg" alt="Recuerdo 7">
+    <img src="foto8.jpg" alt="Recuerdo 8">
+    <img src="foto9.jpg" alt="Recuerdo 9">
+    <img src="foto10.jpg" alt="Recuerdo 10">
+    <img src="foto11.jpg" alt="Recuerdo 11">
+    <video controls>
+    <source src="video1.mp4" type="video/mp4">
+  </video>
+  <video controls>
+    <source src="video2.mp4" type="video/mp4">
+  </video>
+  <video controls>
+    <source src="video3.mp4" type="video/mp4">
+  </video>
+  <video controls>
+    <source src="video4.mp4" type="video/mp4">
+  </video>
+  <video controls>
+    <source src="video5.mp4" type="video/mp4">
+  </video>
+  <video controls>
+    <source src="video6.mp4" type="video/mp4">
+  </video>
+  <video controls>
+    <source src="video7.mp4" type="video/mp4">
+  </video>
+  <video controls>
+    <source src="video8.mp4" type="video/mp4">
+  </video>
+  <video controls>
+    <source src="video9.mp4" type="video/mp4">
+  </video>
+  <video controls>
+    <source src="video10.mp4" type="video/mp4">
+  </video>
+  <video controls>
+    <source src="video11.mp4" type="video/mp4">
+  </video>
+  <video controls>
+    <source src="video12.mp4" type="video/mp4">
+  </video>
+  <video controls>
+    <source src="video13.mp4" type="video/mp4">
+  </video>
+    <!-- Agregar más archivos según sea necesario -->
+  </div>
+
+  <!-- Modal para mostrar la imagen y video en grande -->
+  <div id="modal-imagen" class="modal">
+    <span id="cerrar-modal" class="cerrar">&times;</span>
+    <img id="imagen-grande" class="contenido-modal">
+    <video id="video-grande" class="contenido-modal" controls></video>
+  </div>
+
+  <div class="boton-regresar">
+    <a href="index.html">← Regresar al Inicio</a>
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      Denilson Cuello &amp; Valeria Sierra <br>
+      02/01/2025
+    </div>
+    <div class="footer-right">
+      <button id="calendar-button">📅</button>
+    </div>
+  </footer>
+
+  <!-- Modal del calendario -->
+  <div id="calendar-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close-calendar">&times;</span>
+      <div id="calendar-container"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
